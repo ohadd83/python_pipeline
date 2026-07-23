@@ -1,7 +1,11 @@
 pipeline {
 
-    agent any
-
+//    agent any
+    agent {
+        docker {
+            image 'python:3.12'
+        }
+    }
 
     environment {
         IMAGE_NAME = "python-app"
