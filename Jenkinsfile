@@ -99,7 +99,9 @@ pipeline {
 
                 sh '''
                 sleep 15
-                curl http://localhost:5000/health
+# Dynamically grab the internal container IP
+                TARGET_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' python-container)
+                curl http://${TARGET_IP}:5000/health
                 '''
 
             }
