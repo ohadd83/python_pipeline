@@ -101,7 +101,7 @@ pipeline {
                 sleep 5
 # Dynamically grab the internal container IP
                 TARGET_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' python-container)
-                echo $TARGET_IP
+#                echo $TARGET_IP
                 curl http://${TARGET_IP}:5000/health
                 '''
 
