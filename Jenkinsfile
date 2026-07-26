@@ -86,17 +86,17 @@ pipeline {
         }
 
 
-//        stage('Health Check') {
-//
-//            steps {
+        stage('Health Check') {
 
-//                sh '''
-//                sleep 5
-//                curl http://localhost:5000/health
-//                '''
+            steps {
 
-//            }
-//        }
+                sh '''
+                sleep 5
+                curl http://localhost:5000/health
+                '''
+
+            }
+        }
 
 
     }
@@ -118,13 +118,13 @@ pipeline {
         }
 
 
- //       always {
-//
-////            sh '''
-  //          docker rm -f python-container || true
-  //          '''
+       always {
 
-    //    }
+            sh '''
+          docker rm -f python-container || true
+          '''
+
+        }
 
     }
 
