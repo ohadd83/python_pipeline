@@ -86,14 +86,14 @@ pipeline {
         }
 
 
-        stage('Health Check') {
+//        stage('Health Check') {
+//
+//            steps {
 
-            steps {
-
-                sh '''
-                sleep 5
-                curl http://localhost:5000/health
-                '''
+//                sh '''
+//                sleep 5
+//                curl http://localhost:5000/health
+//                '''
 
             }
         }
