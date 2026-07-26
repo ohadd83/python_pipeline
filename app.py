@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello Jenkins CI/CD Python Application aaaaaa test python app"
+    return "Hello Jenkins CI/CD Python Application"
 
 @app.route("/health")
 def health():
