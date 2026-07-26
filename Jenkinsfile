@@ -1,12 +1,17 @@
 pipeline {
-
-//    agent any
     agent {
         docker {
-            image 'python:3.12'
-            args '-u root'
+            image 'ohadd83/python-docker-agent:latest'
+            args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
         }
-    }
+    } 
+//    agent any
+//    agent {
+//        docker {
+//            image 'python:3.12'
+//            args '-u root'
+//        }
+//    }
 
     environment {
         IMAGE_NAME = "python-app"
