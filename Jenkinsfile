@@ -91,7 +91,7 @@ pipeline {
             steps {
 
                 sh '''
-                sleep 5
+                sleep 15
                 curl http://localhost:5000/health
                 '''
 
