@@ -128,8 +128,7 @@ pipeline {
        always {
 
             sh '''
-          echo "container is running"
-//          docker rm -f python-container || true
+          docker rm -f python-container || true
           '''
 
         }
