@@ -89,7 +89,7 @@ pipeline {
         
             steps {
                 sh '''
-                echo $("docker ps | grep 5000 | awk '{print$1}')
+                docker ps | grep 5000 | awk '{print $1}'
                 '''
             }
         }
