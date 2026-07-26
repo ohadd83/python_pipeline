@@ -129,7 +129,7 @@ pipeline {
 
             sh '''
           echo "container is running"
-          docker rm -f python-container || true
+//          docker rm -f python-container || true
           '''
 
         }
