@@ -85,7 +85,14 @@ pipeline {
             }
         }
 
-
+        stage('check if container is up') {
+        
+            steps {
+                sh '''
+                echo $("docker ps | grep 5000 | awk '{print$1}')
+                '''
+            }
+        }
         stage('Health Check') {
 
             steps {
@@ -121,8 +128,8 @@ pipeline {
        always {
 
             sh '''
-            echo "container is running"
-//          docker rm -f python-container || true
+          echo "container is running"
+          docker rm -f python-container || true
           '''
 
         }
